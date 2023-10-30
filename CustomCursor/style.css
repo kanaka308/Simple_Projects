@@ -1,0 +1,34 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: white;
+    font-size: 9vw;
+    font-weight: 900;
+    text-shadow: 0cqi;
+    
+}
+.cursor{
+    width: 40px;
+    
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    mix-blend-mode: difference;
+    position: absolute;
+    /* transition: all linear 0.09s; */
+}
