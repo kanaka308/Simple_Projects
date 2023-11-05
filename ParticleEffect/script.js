@@ -79,6 +79,24 @@ function handleParticles(){
     ParticleArray[i].updateParticle()
     ParticleArray[i].drawParticle()
     
+    for(let j= i; j< ParticleArray.length; j++){
+      const dx = ParticleArray[i].x - ParticleArray[j].x;
+      const dy = ParticleArray[i].y - ParticleArray[j].y;
+      const distance = Math.sqrt(dx*dx + dy*dy);
+      if (distance < 50){
+        ctx.beginPath();
+        ctx.strokeStyle = ParticleArray[i].color;
+        ctx.lineWidth = ParticleArray[i].size/10;
+        ctx.moveTo(ParticleArray[i].x, ParticleArray[i].y);
+        ctx.lineTo(ParticleArray[j].x, ParticleArray[j].y);
+        ctx.stroke()
+        ctx.closePath();
+      }
+    }
+    if(ParticleArray[i].size <= 0.3){
+      ParticleArray.splice(i, 1);
+      i--;
+    }
   }
 }
 
